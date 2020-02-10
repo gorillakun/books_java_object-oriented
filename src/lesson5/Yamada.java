@@ -6,8 +6,4 @@ public class Yamada extends Player {
         super(playerName);
     }
 
-    public int showHand(){
-        return PAPER;
-    }
-
 }

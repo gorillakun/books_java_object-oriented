@@ -6,7 +6,4 @@ public class Murata extends Player {
         super(playerName);
     }
 
-    public int showHand(){
-        return STONE;
-    }
 }
