@@ -13,13 +13,15 @@ public class Player {
     }
 
     public void play(Player nextPlayer){
+
         Hand nextHand = nextPlayer.showHand();
 
+        // 次のプレイヤーの手札から抜き出したカード
         Card pickedCard = nextHand.pickCard();
 
         System.out.println(this + ":" + nextPlayer + "さんから" + pickedCard + "を引きました");
 
-        dealCard(pickedCard);
+        this.dealCard(pickedCard);
 
         if (myHand.getNumberOfCards() == 0){
             master.declareWin(this);

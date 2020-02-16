@@ -19,9 +19,11 @@ public class Card {
         return this.number;
     }
 
+    // ゲームの仕様上、標準出力に文字を表示させる必要があるため、toStringメソッドをオーバーライドする
     public String toString(){
         StringBuffer string = new StringBuffer();
 
+        // 数字があるものはスートと数字の組み合わせを返す
         if (this.number > 0){
             switch (this.suit){
                 case SUIT_SPADE:
@@ -58,6 +60,7 @@ public class Card {
                     break;
             }
         }
+        // ジョーカーに数字はない
         else {
             string.append("JOKER");
         }

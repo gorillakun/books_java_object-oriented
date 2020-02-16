@@ -7,12 +7,11 @@ public class Hand {
     // サンプルコードだとジェネリクスを使ってない
     private ArrayList<Card> handCards = new ArrayList();
 
-
     public void addCard(Card card){
         handCards.add(card);
     }
 
-
+    // カードを抜き取る。ここでは手札の最初のものを抜くことにする。
     public Card pickCard(){
 
         Card pickedCard = handCards.remove(0);
@@ -48,15 +47,20 @@ public class Hand {
     }
 
 
+    // 数字が同じものの組み合わせを探す。なければnullを返す
     public Card[] findSameNumberCard(){
         int numberOfHandCards = handCards.size();
         Card[] sameCards = null;
 
         if (numberOfHandCards > 0) {
+
+            // 最後に追加されたカードの定義。indexは0から振られるから、全体-1の番号が最後に追加されたカードの番号と等しくなる
             int lastIndex = numberOfHandCards -1;
             Card lastAddedCard = handCards.get(lastIndex);
 
             int lastAddedCardNum = lastAddedCard.getNumber();
+
+            // 最後に追加されたカードに対し、手元にあるカードを1枚ずつ調べて、数字が同じかどうかをチェックしていく
             for (int index=0; index<lastIndex; index++){
                 Card card = handCards.get(index);
                 if (card.getNumber() == lastAddedCardNum){
