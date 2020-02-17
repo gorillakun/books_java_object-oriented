@@ -41,6 +41,8 @@ public class Player {
     }
 
 
+    // Masterクラス内で呼ばれる、最初にカードを配られたときに手札を捨てる動作 dealCard を呼び出している
+    // 中身の処理がゲーム中と同じであるため、わざわざ処理を書かなくても dealCard を呼び出せばよいだけ
     public void receiveCard(Card card){
         dealCard(card);
     }
